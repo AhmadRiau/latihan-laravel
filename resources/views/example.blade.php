@@ -7,6 +7,11 @@
    <title>Laravel Test</title>
 </head>
 <body>
-   <p>Hi {{ $name }} </p>
+   <p>Your {{$activities ->name}}         
+   
+      @foreach ($students as $student)                
+         <li>{{ $student->name }}</li>   
+      @endforeach
+   </p>
 </body>
 </html>
