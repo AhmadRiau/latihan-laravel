@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/', [StudentController::class, 'index'])->name('index');
+    Route::get('/filter', [StudentController::class, 'filter']);
+    Route::get('/show/{id}', [StudentController::class, 'show'])->name('show');
+    Route::get('/create', [StudentController::class, 'create'])->name('create');
+    Route::post('/create', [StudentController::class, 'store'])->name('store');
+    Route::get('/edit/{student}', [StudentController::class, 'edit'])->name('edit');
+    Route::patch('/update/{student}', [StudentController::class, 'update'])->name('update');
+    Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
 });
-
-Route::get('/greeting/{id}', [StudentController::class, 'show']);

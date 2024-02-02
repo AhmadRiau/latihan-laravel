@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         $faker = Faker::create('id_ID');
 
         for ($i = 0; $i < 10; $i++) {
@@ -31,20 +24,27 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             DB::table('students')->insert([
                 'name' => $faker->name,
                 'score' =>  $faker->numberBetween(0,100),
-                'teacher_id'=> $faker->numberBetween(1,8)
+                'teacher_id'=> $faker->numberBetween(1,10)
             ]);
         }
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             DB::table('contacts')->insert([
                 'phone' => $faker->e164PhoneNumber(),
                 'email' =>  "{$faker->firstName}@gmail.com",
                 'address'=> $faker->address,
-                'student_id'=> $faker->numberBetween(1,8)
+                'student_id'=> $faker->unique()->numberBetween(1,30)
+            ]);
+        }
+
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('activity_student')->insert([
+                'student_id' => $faker->numberBetween(1,30),                
+                'activity_id'=> $faker->numberBetween(1,5)
             ]);
         }
     }
