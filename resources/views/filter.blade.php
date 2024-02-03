@@ -14,7 +14,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nama</th>
-              <th scope="col">Score</th>
+              <th scope="col">Nilai</th>
               <th scope="col">Kode Guru</th>
             </tr>
          </thead>

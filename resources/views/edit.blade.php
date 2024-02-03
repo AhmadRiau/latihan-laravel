@@ -19,7 +19,7 @@
                   <h3>Data Siswa</h3>
                </div>
                <div class="col-2">
-                  <a href="{{route('index')}}" class="btn btn-outline-danger">Back</a>
+                  <a href="{{route('index')}}" class="btn btn-outline-danger">Kembali</a>
                </div>
             </div>         
             
@@ -31,7 +31,7 @@
                      <td>: <input type="text" name="name" value="{{$student->name}}"></td>
                   </tr>
                   <tr>
-                     <td><label for="score">Score</label></td>
+                     <td><label for="score">Nilai</label></td>
                      <td>: <input type="text" name="score" value="{{$student->score}}"></td>               
                   </tr>
                   <tr>
@@ -41,12 +41,12 @@
                </table>
             </div>
             <div class="col-4">
-               <button class="btn btn-outline-primary" type="submit">Update</button>     
+               <button class="btn btn-outline-primary" type="submit">Perbarui</button>     
       </form>
             <form action="{{route('delete', $student)}}" method="post">
                @method('DELETE')
                @csrf
-               <button class="btn btn-outline-danger" type="submit">Delete</button>
+               <button class="btn btn-outline-danger" type="submit">Hapus</button>
             </form>               
             </div>
             <p></p>

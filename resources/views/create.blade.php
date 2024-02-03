@@ -19,7 +19,7 @@
                      <td>: <input type="text" name="name" placeholder="name"></td>
                   </tr>
                   <tr>
-                     <td><label for="score">Score</label></td>
+                     <td><label for="score">Nilai</label></td>
                      <td>: <input type="text" name="score" placeholder="score"></td>               
                   </tr>
                   <tr>
@@ -29,7 +29,7 @@
                </table>
             </div>
             <div class="col-4">
-               <button class="btn btn-outline-primary" type="submit">Add</button>
+               <button class="btn btn-outline-primary" type="submit">Tambahkan</button>
             </div>
          </div>                  
       </form>
