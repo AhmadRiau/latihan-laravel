@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,21 +15,21 @@
             <div class="col-8">
                <table>
                   <tr>
-                     <td><label for="name">Nama</label></td>
+                     <td><label for="name">{{__('Name')}}</label></td>
                      <td>: <input type="text" name="name" placeholder="name"></td>
                   </tr>
                   <tr>
-                     <td><label for="score">Nilai</label></td>
+                     <td><label for="score">{{__('Score')}}</label></td>
                      <td>: <input type="text" name="score" placeholder="score"></td>               
                   </tr>
                   <tr>
-                     <td><label for="teacher_id">Kode Guru</label></td>
+                     <td><label for="teacher_id">{{__('Teacher ID')}}</label></td>
                      <td>: <input type="number" name="teacher_id" placeholder="teacher_id"></td>               
                   </tr>
                </table>
             </div>
             <div class="col-4">
-               <button class="btn btn-outline-primary" type="submit">Tambahkan</button>
+               <button class="btn btn-outline-primary" type="submit">{{__("Add New")}}</button>
             </div>
          </div>                  
       </form>
