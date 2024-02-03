@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', [StudentController::class, 'index'])->name('index');
     Route::get('/filter', [StudentController::class, 'filter']);
@@ -23,3 +26,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::patch('/update/{student}', [StudentController::class, 'update'])->name('update');
     Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
