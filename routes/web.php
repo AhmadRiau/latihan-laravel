@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\PictureController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,5 +40,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/locale/{locale}', [LocaleController::class, 'setLocale'])->name('set_locale');
+
+Route::get('/picture/create', [PictureController::class, 'create'])->name('picture.create');
+Route::post('/picture/create', [PictureController::class, 'store'])->name('picture.store');
+Route::get('/picture/{picture}', [PictureController::class, 'show'])->name('picture.show');
+Route::delete('/picture/{picture}', [PictureController::class, 'delete'])->name('picture.delete');
+Route::get('/copy/{picture}', [PictureController::class, 'copy'])->name('picture.copy');
+Route::get('/move/{picture}', [PictureController::class, 'move'])->name('picture.move');
+
